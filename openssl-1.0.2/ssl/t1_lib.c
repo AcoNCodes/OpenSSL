@@ -3451,7 +3451,7 @@ static tls12_lookup tls12_md[] = {
     {NID_sha384, TLSEXT_hash_sha384},
     {NID_sha512, TLSEXT_hash_sha512}
 #ifndef OPENSSL_NO_DSTU
-	{NID_dstu34311, TLSEXT_hash_dstu},
+	,{NID_dstu34311, TLSEXT_hash_dstu},
 #endif
 };
 
@@ -3460,7 +3460,7 @@ static tls12_lookup tls12_sig[] = {
     {EVP_PKEY_DSA, TLSEXT_signature_dsa},
     {EVP_PKEY_EC, TLSEXT_signature_ecdsa}
 #ifndef OPENSSL_NO_DSTU
-	{NID_dstu4145le, TLSEXT_signature_dstu},
+	,{NID_dstu4145le, TLSEXT_signature_dstu},
 #endif
 };
 
