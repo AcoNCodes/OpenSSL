@@ -506,7 +506,11 @@ int ssl_cert_type(X509 *x, EVP_PKEY *pkey)
             ret = SSL_PKEY_DH_RSA;
         else if (i & EVP_PKS_DSA)
             ret = SSL_PKEY_DH_DSA;
-    }
+    	else if (i == NID_dstu4145le)
+			{
+			ret = SSL_PKEY_DSTU;
+			}
+		}
 
  err:
     if (!pkey)
