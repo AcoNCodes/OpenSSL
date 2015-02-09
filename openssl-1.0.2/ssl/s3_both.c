@@ -496,6 +496,10 @@ int ssl_cert_type(X509 *x, EVP_PKEY *pkey)
         ret = SSL_PKEY_GOST94;
     } else if (i == NID_id_GostR3410_2001 || i == NID_id_GostR3410_2001_cc) {
         ret = SSL_PKEY_GOST01;
+	}else if (i == NID_dstu4145le)
+			{
+			ret = SSL_PKEY_DSTU;
+			
     } else if (x && (i == EVP_PKEY_DH || i == EVP_PKEY_DHX)) {
         /*
          * For DH two cases: DH certificate signed with RSA and DH
@@ -506,10 +510,7 @@ int ssl_cert_type(X509 *x, EVP_PKEY *pkey)
             ret = SSL_PKEY_DH_RSA;
         else if (i & EVP_PKS_DSA)
             ret = SSL_PKEY_DH_DSA;
-    	else if (i == NID_dstu4145le)
-			{
-			ret = SSL_PKEY_DSTU;
-			}
+    	
 		}
 
  err:

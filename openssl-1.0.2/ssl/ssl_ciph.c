@@ -284,7 +284,7 @@ static const SSL_CIPHER cipher_aliases[] = {
     {0, SSL_TXT_aGOST01, 0, 0, SSL_aGOST01, 0, 0, 0, 0, 0, 0, 0},
     {0, SSL_TXT_aGOST, 0, 0, SSL_aGOST94 | SSL_aGOST01, 0, 0, 0, 0, 0, 0, 0},
     {0, SSL_TXT_aSRP, 0, 0, SSL_aSRP, 0, 0, 0, 0, 0, 0, 0},
-	{0,SSL_TXT_aDSTU,0,0,SSL_aDSTU,0,0,0,0,0,0,0},
+	{0, SSL_TXT_aDSTU,0,0,SSL_aDSTU,0,0,0,0,0,0,0},
 
     /* aliases combining key exchange and server authentication */
     {0, SSL_TXT_EDH, 0, SSL_kEDH, ~SSL_aNULL, 0, 0, 0, 0, 0, 0, 0},

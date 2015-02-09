@@ -129,7 +129,11 @@ static ENGINE* load_dstu(void)
 	return 0;
 
 #ifndef OPENSSL_NO_DYNAMIC_ENGINE
-    setenv("OPENSSL_ENGINES", UADSTU_DIR, 1);
+	#ifdef WIN32
+		SetEnvironmentVariable("OPENSSL_ENGINES", UADSTU_DIR);
+	#else
+		setenv("OPENSSL_ENGINES", UADSTU_DIR, 1);
+	#endif
 #endif
     ERR_load_crypto_strings();
     ENGINE_load_builtin_engines();

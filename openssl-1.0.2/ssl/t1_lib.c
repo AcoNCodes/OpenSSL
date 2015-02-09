@@ -3562,6 +3562,10 @@ static int tls12_get_pkey_idx(unsigned char sig_alg)
     case TLSEXT_signature_ecdsa:
         return SSL_PKEY_ECC;
 # endif
+#ifndef OPENSSL_NO_DSTU
+	case TLSEXT_signature_dstu:
+		return SSL_PKEY_DSTU;
+#endif
     }
     return -1;
 }
